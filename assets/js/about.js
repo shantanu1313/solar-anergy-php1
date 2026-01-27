@@ -10,3 +10,4 @@ function changeSlide() {
 }
 
 setInterval(changeSlide, 10000); // 10 seconds per image
+
