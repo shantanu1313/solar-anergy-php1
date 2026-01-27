@@ -1,17 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Maha Solar</title>
-
-  <link rel="stylesheet" href="assets/css/navbar.css">
-  <link rel="stylesheet" href="assets/css/style.css">
-  <link rel="stylesheet" href="assets/css/footer.css">
-</head>
-<body>
-
-
+<title>Maha Solar</title>
 <!-- HERO -->
+
 <section class="hero">
   <video autoplay muted loop playsinline>
     <source src="assets/video/solar.mp4" type="video/mp4">

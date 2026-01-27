@@ -13,4 +13,11 @@ class User extends CI_Controller {
     $this->load->view("user/footer");
 }
 
+public function about(){
+    $this->load->view("user/navbar");
+    $this->load->view("user/about");
+    $this->load->view("user/footer");
+
+}
+
 }
