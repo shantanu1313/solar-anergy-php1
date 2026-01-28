@@ -1,97 +1,148 @@
-*{
-  padding: 0;
-  margin: 0;
-  
-}
-body{
-  overflow-x:hidden;
-}
-
-/* HERO */
-.hero{
-  height:90vh;
-  position:relative;
+.hero-section {
+  height: 100vh;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.hero video{
-  width:100%;
-  height:100%;
-  object-fit:cover;
+/* ✅ Video for Desktop */
+.hero-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
-.hero-content{
-  position:absolute;
-  top:50%;
-  left:8%;
-  transform:translateY(-50%);
-  color:#fff;
+/* Overlay */
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.65);
+  z-index: 1;
 }
 
-.hero-content h1{
-  font-size:55px;
+/* Content */
+.hero-content {
+  position: relative;
+  z-index: 2;
+  color: white;
 }
 
-.hero-btn{
-  margin-top:15px;
-  display:inline-block;
-  padding:12px 20px;
-  background:#ffc107;
-  border-radius:8px;
-  font-weight:bold;
+.hero-content h1 {
+  font-size: 4rem;
+  font-weight: bold;
 }
 
-/* CARDS */
-.cards{
-  display:flex;
-  justify-content:center;
-  gap:20px;
-  padding:40px 0;
+.hero-btn {
+  background: #ffb300;
+  padding: 12px 35px;
+  border-radius: 30px;
+  font-weight: 600;
 }
 
-.card{
-  background:#f5f5f5;
-  padding:25px;
-  width:260px;
-  border-radius:12px;
-}
+/* ✅ MOBILE RESPONSIVE FIX */
+@media (max-width: 576px) {
 
-/* BLOGS */
-.blog-grid{
-  display:flex;
-  justify-content:center;
-  gap:20px;
-  padding:30px;
-}
-
-.blog-card{
-  width:250px;
-  background:#fff;
-  border-radius:12px;
-  box-shadow:0 3px 10px rgba(0,0,0,0.12);
-  overflow:hidden;
-}
-
-.blog-card img{
-  width:100%;
-}
-
-.btn{
-  display:inline-block;
-  padding:10px 18px;
-  background:green;
-  color:white;
-  border-radius:8px;
-}
-
-/* RESPONSIVE */
-@media(max-width:768px){
-  .cards,
-  .blog-grid{
-    flex-direction:column;
-    align-items:center;
+  /* Video Hide */
+  .hero-video {
+    display: none;
   }
 
-  .hero-content h1{
-    font-size:35px;
+  /* Instead Show Image */
+  .hero-section {
+    background: url("assets/images/solar.jpg") center/cover no-repeat;
+  }
+
+  /* Smaller Text */
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+}
+/* WHAT WE DO SECTION */
+.what-we-do {
+  background: #f8f9fa;
+  padding: 80px 20px;
+}
+
+/* Title */
+.section-title {
+  font-size: 2.6rem;
+  font-weight: 700;
+  color: #0b2c4d;
+}
+
+/* Subtitle */
+.section-subtitle {
+  font-size: 1.2rem;
+  color: #555;
+  margin-top: 10px;
+}
+
+/* Description */
+.section-desc {
+  max-width: 750px;
+  margin: 20px auto;
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: #333;
+}
+
+/* Service Card */
+.service-card {
+  background: white;
+  padding: 35px 25px;
+  border-radius: 18px;
+  box-shadow: 0px 6px 18px rgba(0, 0, 0, 0.08);
+  transition: 0.3s ease;
+}
+
+/* Hover Effect */
+.service-card:hover {
+  transform: translateY(-8px);
+}
+
+/* Card Title */
+.service-card h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #0b2c4d;
+  margin-bottom: 15px;
+}
+
+/* Card Text */
+.service-card p {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.6;
+}
+
+/* Button */
+.service-btn {
+  margin-top: 15px;
+  background: #ffb300;
+  padding: 10px 28px;
+  border-radius: 30px;
+  font-weight: 600;
+  color: black;
+  transition: 0.3s;
+}
+
+.service-btn:hover {
+  background: #ffa000;
+}
+
+/* ✅ Responsive: Mobile Stack */
+@media (max-width: 768px) {
+  .section-title {
+    font-size: 2rem;
+  }
+
+  .service-card {
+    padding: 25px 18px;
   }
 }

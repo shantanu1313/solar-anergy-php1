@@ -1,64 +1,90 @@
-<title>Maha Solar</title>
-<!-- HERO -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Solar Hero Video</title>
 
-<section class="hero">
-  <video autoplay muted loop playsinline>
+  <!-- Bootstrap CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- HERO SECTION -->
+  <section class="hero-section">
+
+  <!-- Background Video -->
+  <video autoplay muted loop playsinline class="hero-video">
     <source src="assets/video/solar.mp4" type="video/mp4">
   </video>
 
-  <div class="hero-content">
-    <h1>Power Your Future With Solar Energy</h1>
+  <!-- Overlay -->
+  <div class="hero-overlay"></div>
+
+  <!-- Content -->
+  <div class="hero-content text-center">
+    <h1>Power Your Future <br> With Solar Energy</h1>
     <p>Clean, Renewable & Affordable Solar Solutions</p>
-    <a href="#" class="hero-btn">Explore More</a>
+
+    <a href="#" class="btn hero-btn">Explore More</a>
+  </div>
+
+</section>
+<!-- WHAT WE DO SECTION -->
+<section class="what-we-do py-5">
+  <div class="container">
+
+    <!-- Section Heading -->
+    <div class="text-center mb-5">
+      <h2 class="section-title">What We Do</h2>
+
+      <p class="section-subtitle">
+        Clean, Renewable & Affordable Solar Solutions
+      </p>
+
+      <p class="section-desc">
+        Maha Solar provides sustainable solar power systems for homes and
+        industries. We help reduce electricity costs and support energy transition
+        towards a greener future.
+      </p>
+    </div>
+
+    <!-- Cards Row -->
+    <div class="row justify-content-center g-4">
+
+      <!-- Card 1 -->
+      <div class="col-md-5">
+        <div class="service-card text-center">
+          <h3>Solar Power</h3>
+          <p>
+            High efficiency rooftop solar panel installation with long-lasting
+            clean energy solutions.
+          </p>
+          <a href="#" class="btn service-btn">Know More</a>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="col-md-5">
+        <div class="service-card text-center">
+          <h3>Energy Transition</h3>
+          <p>
+            Helping individuals and businesses shift from traditional power to
+            renewable solar energy systems.
+          </p>
+          <a href="#" class="btn service-btn">Know More</a>
+        </div>
+      </div>
+
+    </div>
+
   </div>
 </section>
 
-<!-- WHAT WE DO -->
-<section class="whatwedo">
-  <h2>What We Do</h2>
-  <p>We provide sustainable solar energy solutions for homes & industries.</p>
 
-  <div class="cards">
-    <div class="card">
-      <h3>Solar Power</h3>
-      <p>High quality rooftop and industrial solar installations.</p>
-      <a href="#">Know More →</a>
-    </div>
-
-    <div class="card">
-      <h3>Energy Transition</h3>
-      <p>Helping businesses move toward renewable energy future.</p>
-      <a href="#">Know More →</a>
-    </div>
-  </div>
-</section>
-
-<!-- BLOGS -->
-<section class="blogs">
-  <h2>Latest Blogs</h2>
-
-  <div class="blog-grid">
-    <div class="blog-card">
-      <img src="assets/image/blog1.jpg">
-      <h3>Why Solar Is Best Investment</h3>
-      <p>Choose Maha Solar</p>
-    </div>
-
-    <div class="blog-card">
-      <img src="assets/image/blog2.jpg">
-      <h3>Rooftop Solar Benefits</h3>
-      <p>Choose Maha Solar</p>
-    </div>
-
-    <div class="blog-card">
-      <img src="assets/image/blog3.jpg">
-      <h3>Solar Park Future</h3>
-      <p>Choose Maha Solar</p>
-    </div>
-  </div>
-
-  <a href="blogs.php" class="btn">Read Blogs</a>
-</section>
 
 
 </body>
