@@ -30,6 +30,7 @@ public function services(){
     $this->load->view("user/services");
     $this->load->view("user/footer");
 }
+
 public function solar_water_heater(){
 	$this->load->view("user/navbar");
 	$this->load->view("user/solar_water_heater");
@@ -50,4 +51,9 @@ public function solar_street_light(){
 	$this->load->view("user/solar_street_light");
 	$this->load->view("user/footer");
 }
+
+
+
+
+
 }
