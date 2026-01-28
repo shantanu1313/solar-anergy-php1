@@ -57,6 +57,17 @@
     Products ▾
   </a>
 
+
+  <ul class="dropdown-menu">
+    <li><a href="<?=base_url()?>user/product/solar_water_heater">Solar Water Heater</a></li>
+    <li><a href="<?=base_url()?>user/product/solar_water_pump">Solar Water Pumps</a></li>
+    <li><a href="<?=base_url()?>user/product/on_grid_solar">On Grid Solar</a></li>
+    <li><a href="<?=base_url()?>user/product/solar_street_light">Solar Street Light</a></li>
+  </ul>
+</li>
+
+
+
   <ul class="dropdown-menu">
     <li><a href="<?=base_url()?>user/product/solar_water_heater">Solar Water Heater</a></li>
     <li><a href="<?=base_url()?>user/product/solar_water_pump">Solar Water Pumps</a></li>
