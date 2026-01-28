@@ -90,6 +90,27 @@ class User extends CI_Controller {
 
 }
 
+<<<<<<< Updated upstream
 
 }
 
+=======
+public function blogs(){
+    $this->load->view("user/navbar");
+    $this->load->view("user/blogs");
+    $this->load->view("user/footer");
+}
+public function contact(){
+    $this->load->view("user/navbar");
+    $this->load->view("user/contact");
+    $this->load->view("user/footer");
+}
+
+public function quote(){
+    $this->load->view("user/navbar");
+    $this->load->view("user/quote");
+    $this->load->view("user/footer");
+}
+
+}
+>>>>>>> Stashed changes
