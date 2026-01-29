@@ -82,106 +82,101 @@
 </section>
 
 <!-- ABOUT US SECTION -->
-<section class="about-section py-5">
-  <div class="container">
+<section class="about-section">
 
-    <div class="row align-items-center">
+  <div class="about-container">
 
-      <!-- LEFT SIDE IMAGE -->
-      <div class="col-lg-6 mb-4">
-        <div class="about-img">
-          <img src="<?=base_url('assets/image/ind2.jpg')   ?>" alt="About Us">
-        </div>
-      </div>
+    <!-- Left Image -->
+    <div class="about-image">
+      <img src="<?= base_url('assets/image/blog2.jpg') ?>" alt="About Solar">
+    </div>
 
-      <!-- RIGHT SIDE CONTENT -->
-      <div class="col-lg-6">
-        <h2 class="about-title">About Us</h2>
+    <!-- Right Content -->
+    <div class="about-text">
+      <h2>About Us</h2>
 
-        <p class="about-text">
-          Agni Solar has 3 decades of experience as a leader and innovator in the
-          solar energy space. Our varied expertise includes all major verticals
-          of solar power systems and solutions. Our aim is to be a solar energy
-          brand that evokes trust, confidence and reliability. We guide customers
-          into taking the right decisions for all their solar energy needs.
-        </p>
+      <p>
+        Agni Solar has 3 decades of experience as a leader and innovator
+        in the solar energy space. Our varied expertise includes all major
+        verticals of solar power systems and solutions.
+      </p>
 
-        <a href="#" class="btn about-btn">Learn More</a>
-      </div>
+      <p>
+        Our aim is to be a solar energy brand that evokes trust, confidence
+        and reliability. We guide customers into taking the right decisions
+        for all their solar energy needs.
+      </p>
 
+      <!-- ✅ Button Added Here -->
+      <a href="about.html" class="about-btn">Learn More</a>
     </div>
 
   </div>
 </section>
 
+
   <!-- ===== PRODUCTS SECTION ===== -->
-  <section class="products-section">
+ <section class="products-section">
+  <h2 class="section-title">Products</h2>
 
-    <!-- Page Title -->
-    <h2 class="page-title">Products</h2>
+  <div class="products-container">
 
-    <div class="products-container">
+    <!-- Left Side Text -->
+    <div class="products-text">
+      <h3>Our Solar Products</h3>
 
-      <!-- LEFT SIDE TEXT -->
-      <div class="products-text">
-        <h1>Our Solar Products</h1>
+      <ul>
+        <li>Solar Water Heater</li>
+        <li>Solar Pumps</li>
+        <li>On Grid Solar</li>
+        <li>Street Light</li>
+      </ul>
 
-        <ul>
-          <li>Solar Water Heater</li>
-          <li>Solar Pumps</li>
-          <li>On Grid Solar</li>
-          <li>Street Light</li>
-        </ul>
-      </div>
-
-      <!-- RIGHT SIDE IMAGE -->
-      <div class="products-image">
-        <img src="<?= base_url('assets/image/CONNECT.png') ?>" alt="Solar Product">
-      </div>
-
+      <!-- ✅ Button Added Here -->
+      <a href="products.html" class="products-btn">View Products</a>
     </div>
 
-  </section>
+    <!-- Right Side Image -->
+    <div class="products-image">
+      <img src="<?= base_url('assets/image/CONNECT.png') ?>" alt="Solar Products">
+    </div>
+
+  </div>
+</section>
+
 
 
 
 <!-- SERVICES SECTION -->
-<section class="services-section py-5">
-  <div class="container">
+<section class="services-section">
+  <h2 class="section-title">Services We Provide</h2>
 
-    <!-- Section Heading -->
-    <h2 class="text-center fw-bold mb-5">Services We Provide</h2>
+  <div class="services-container">
 
-    <div class="row align-items-center">
+    <!-- Left Side Image -->
+    <div class="services-image">
+      <img src="<?= base_url('assets/image/service.jpg') ?>" alt="Services Image">
+    </div>
 
-      <!-- LEFT SIDE : Auto Image Slider -->
-      <div class="col-lg-6 mb-4">
-        <div class="slider-box">
-          <img id="sliderImage" src="<?=base_url('assets/image/ind1.jpg')    ?>" alt="Solar Service">
+    <!-- Right Side Content -->
+    <div class="services-text">
+      <h3>Industrial & Commercial Solar Services</h3>
 
-        </div>
-      </div>
+      <ul>
+        <li>Residential Solar Projects</li>
+        <li>Industrial Solar Solutions</li>
+        <li>Commercial Solar Installations</li>
+      </ul>
 
-      <!-- RIGHT SIDE : Services List -->
-      <div class="col-lg-6">
-        <h3 class="service-title mb-4">
-          Industrial & Commercial Solar Services
-        </h3>
-
-        <ul class="service-list">
-          <li><span>Residential Solar Projects</span></li>
-          <li><span>Industrial Solar Solutions</span></li>
-          <li><span>Commercial Solar Installations</span></li>
-        </ul>
-      </div>
+      <!-- ✅ Button Added Here -->
+      <a href="services.html" class="services-btn">Explore Services</a>
 
     </div>
+
   </div>
 </section>
 
-
-
-
+<!-- BLOGS SECTION -->
 <section class="blogs-section py-5">
   <div class="container">
 
@@ -253,6 +248,75 @@
   </div>
 </section>
 
+<!-- FAQ SECTION -->
+<section class="faq-section">
+  <h2 class="faq-title">Frequently Asked Questions</h2>
+
+  <div class="faq-container">
+
+    <!-- Left Column -->
+    <div class="faq-column">
+
+      <div class="faq-item">
+        <button class="faq-question">
+          What is Solar Energy?
+          <span>+</span>
+        </button>
+        <div class="faq-answer">
+          <p>
+            Solar energy is energy obtained from sunlight and converted into
+            electricity or heat using solar systems.
+          </p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          How long do solar panels last?
+          <span>+</span>
+        </button>
+        <div class="faq-answer">
+          <p>
+            Solar panels generally last 25–30 years with proper maintenance.
+          </p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Right Column -->
+    <div class="faq-column">
+
+      <div class="faq-item">
+        <button class="faq-question">
+          Is solar power suitable for industries?
+          <span>+</span>
+        </button>
+        <div class="faq-answer">
+          <p>
+            Yes, industrial solar solutions reduce electricity costs and provide
+            sustainable energy.
+          </p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          Do you provide installation support?
+          <span>+</span>
+        </button>
+        <div class="faq-answer">
+          <p>
+            Yes, we provide complete installation, service, and maintenance
+            support for all projects.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+<script src="<?= base_url('assets/js/index.js') ?>"></script>
 
 
 <!-- ===== HERO TOP BANNER SECTION ===== -->
@@ -285,6 +349,7 @@
   </div>
 
 </section>
+
 
 
 
