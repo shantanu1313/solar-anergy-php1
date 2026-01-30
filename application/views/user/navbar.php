@@ -19,6 +19,8 @@
 <link rel="stylesheet" href="<?= base_url('assets/css/industrial.css') ?>">
 
 
+<link rel="stylesheet"
+ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <link rel="stylesheet" href="<?= base_url('assets/css/blogs.css') ?>">
 <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
