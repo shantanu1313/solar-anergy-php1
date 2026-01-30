@@ -13,26 +13,27 @@
 </head>
 <body>
 
-  <!-- HERO SECTION -->
-  <section class="hero-section">
+ <!-- ✅ HERO SECTION -->
+<section class="hero-section">
 
   <!-- Background Video -->
   <video autoplay muted loop playsinline class="hero-video">
-    <source src="<?=base_url('assets/video/solar.mp4') ?>" type="video/mp4">
+    <source src="<?= base_url('assets/video/solar.mp4') ?>" type="video/mp4">
   </video>
-
-  
 
   <!-- Overlay -->
   <div class="hero-overlay"></div>
 
   <!-- Content -->
-  <div class="hero-content text-center">
-    <h1>Power Your Future <br> With Solar Energy</h1>
+  <div class="hero-content">
+    <h1>
+      Power Your Future <br>
+      With Solar Energy
+    </h1>
+
     <p>Clean, Renewable & Affordable Solar Solutions</p>
 
-   <a href="#" class="main-btn">Explore More</a>
-
+    <a href="#" class="main-btn">Explore More</a>
   </div>
 
 </section>
