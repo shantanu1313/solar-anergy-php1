@@ -3,6 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="<?= base_url('assets/css/style.css') ?>">
+
   <link
   href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
   rel="stylesheet"
@@ -13,26 +15,31 @@
 </head>
 <body>
 
-  <!-- HERO SECTION -->
-  <section class="hero-section">
+ <!-- ✅ HERO SECTION -->
+<section class="hero-section">
 
   <!-- Background Video -->
   <video autoplay muted loop playsinline class="hero-video">
-    <source src="<?=base_url('assets/video/solar.mp4') ?>" type="video/mp4">
+    <source src="<?= base_url('assets/video/solar.mp4') ?>" type="video/mp4">
   </video>
-
-  
 
   <!-- Overlay -->
   <div class="hero-overlay"></div>
+   <!-- Hero Content -->
+  <div class="hero-content">
+
 
   <!-- Content -->
-  <div class="hero-content text-center">
-    <h1>Power Your Future <br> With Solar Energy</h1>
+  <div class="hero-content">
+    
+    <h1>
+      Power Your Future <br>
+      With Solar Energy
+    </h1>
+
     <p>Clean, Renewable & Affordable Solar Solutions</p>
 
-   <a href="#" class="main-btn">Explore More</a>
-
+    <a href="#" class="main-btn">Explore More</a>
   </div>
 
 </section>
@@ -64,34 +71,35 @@
       </p>
 
       <!-- ✅ Button Added Here -->
-      <a href="about.html" class="main-btn">Learn More</a>
+      <a href="<?= base_url('user/about') ?>" class="main-btn">Learn More</a>
 
 
     </div>
 
   </div>
 </section>
-<!-- STATS WAVE SECTION -->
 <section class="stats-wave-section">
   <div class="stats-container">
 
     <div class="stat-box">
-      <h2>1.3</h2>
+      <h2 class="counter" data-target="1.3" data-suffix="">0</h2>
       <p>Tons Of Carbon Footprint Eliminated</p>
     </div>
 
     <div class="stat-box">
-      <h2>400</h2>
+      <h2 class="counter" data-target="400" data-suffix="+">0</h2>
       <p>Solar PV Installed</p>
     </div>
 
     <div class="stat-box">
-      <h2>60%</h2>
+      <h2 class="counter" data-target="60" data-suffix="%">0</h2>
       <p>Lower Electricity Consumption</p>
     </div>
 
   </div>
 </section>
+
+
 
 
   <!-- ===== PRODUCTS SECTION ===== -->
@@ -112,7 +120,7 @@
       </p>
 
       <!-- ✅ Button Below Description -->
-      <a href="products.html" class="main-btn">View Products</a>
+      <a href="<?= base_url('user/product') ?>" class="main-btn">View Products</a>
 
     </div>
 
@@ -150,7 +158,7 @@
       </p>
 
       <!-- ✅ Button Below Description -->
-      <a href="services.html" class="main-btn">Explore Services</a>
+      <a href="<?= base_url('user/services') ?>" class="main-btn">Explore Services</a>
 
     </div>
 
@@ -182,7 +190,7 @@
               Choose Maha Solar Systems
             </p>
 
-            <a href="#" class=" blog-btn">Read Blogs</a>
+            <a href="<?= base_url('user/blogs') ?>" class="blog-btn">Read Blogs</a>
           </div>
         </div>
       </div>
@@ -200,8 +208,7 @@
             <p class="card-text text-muted">
               Choose Maha Solar Systems
             </p>
-
-            <a href="#" class=" blog-btn">Read Blogs</a>
+<a href="<?= site_url('user/blogs') ?>" class="blog-btn">Read Blogs</a>
           </div>
         </div>
       </div>
@@ -220,7 +227,7 @@
               Choose Maha Solar Systems
             </p>
 
-            <a href="#" class="blog-btn">Read Blogs</a>
+      <a href="<?= site_url('user/blogs')?>" class=" blog-btn">Read Blogs</a>
           </div>
         </div>
       </div>
@@ -236,7 +243,7 @@
 
     <!-- Left Image -->
     <div class="hero-banner-img">
-        <img src="<?= base_url('assets/image/CONNECT.png') ?>" alt="Solar Banner">
+        <img src="<?= site_url('assets/image/CONNECT.png') ?>" alt="Solar Banner">
       </div>
 
     <!-- Center Text -->
@@ -250,7 +257,7 @@
 
     <!-- Right Button -->
     <div class="hero-banner-btn">
-      <a href="#" class="connect-btn">
+      <a href="<?=base_url('user/contact') ?>" class="connect-btn">
         <i class="fa-solid fa-phone"></i>
         CONNECT WITH US
       </a>
