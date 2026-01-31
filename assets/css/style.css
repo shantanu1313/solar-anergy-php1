@@ -1,3 +1,28 @@
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ✅ Paste Here */
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+.ms-footer {
+  margin: 0 !important;
+}
+
+
 /* =======================================================
    ✅ GLOBAL THEME (ONE FONT + COLORS)
 ======================================================= */
@@ -205,6 +230,30 @@ section {
   font-size: 15px;
   color: #666;
 }
+/* ✅ STATS SECTION MOBILE RESPONSIVE */
+@media (max-width: 768px) {
+
+  .stats-wave-section {
+    padding: 40px 0; /* ✅ Height कमी */
+  }
+
+  .stats-container {
+    flex-direction: column; /* ✅ Stack in Mobile */
+    gap: 25px;              /* ✅ Space between boxes */
+    text-align: center;
+  }
+
+  .stat-box h2 {
+    font-size: 40px; /* ✅ Number Smaller */
+  }
+
+  .stat-box p {
+    font-size: 14px; /* ✅ Text Smaller */
+    max-width: 250px;
+    margin: auto;
+  }
+}
+
 
 /* =======================================================
    ✅ PRODUCTS SECTION
@@ -526,6 +575,132 @@ section {
 
 .blog-btn:hover {
   background:linear-gradient(260deg, #d38935, #110674)
+}
+
+/* ================= TESTIMONIALS SECTION ================= */
+
+.testimonials-section {
+  padding: 60px 0;
+  font-family: "Poppins", sans-serif;
+
+  /* ✅ Background Image */
+  background: url("../image/People.jpg") no-repeat center;
+  background-size: cover;
+
+  position: relative;
+}
+
+/* ✅ Light Overlay for Card Visibility */
+.testimonials-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.85);
+}
+
+/* ✅ Content Above Overlay */
+.testimonials-heading,
+.testimonials-container {
+  position: relative;
+  z-index: 2;
+}
+
+/* Title */
+.testimonials-heading {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.testimonials-heading h2 {
+  font-size: 46px;
+  font-weight: 700;
+  color: #0b2c4d;
+}
+
+.testimonials-heading p {
+  font-size: 16px;
+  color: #555;
+  margin-top: 8px;
+}
+
+/* Layout Container */
+.testimonials-container {
+  width: 85%;
+  margin: auto;
+
+  display: flex;
+  gap: 40px;
+  align-items: stretch;
+}
+
+/* Common Card */
+.testimonial-card {
+  background: white;
+  padding: 40px;
+  border-radius: 14px;
+
+  box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.12);
+}
+
+/* Left Big Card */
+.big-card {
+  flex: 1;
+}
+
+/* Right Side Cards */
+.right-cards {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+/* Small Cards */
+.small-card {
+  padding: 30px;
+}
+
+/* ✅ Client Image */
+.client-img img {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  object-fit: cover;
+
+  margin-bottom: 20px;
+  border: 3px solid #ffcc00;
+}
+
+/* Text */
+.testimonial-card p {
+  font-size: 16px;
+  line-height: 1.8;
+  color: #444;
+}
+
+/* Client Name */
+.client-name {
+  display: block;
+  margin-top: 20px;
+  font-weight: 600;
+  color: #777;
+}
+
+/* ✅ Responsive */
+@media (max-width: 992px) {
+
+  .testimonials-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .right-cards {
+    flex-direction: column;
+  }
+
+  .testimonial-card {
+    padding: 30px;
+  }
 }
 
 

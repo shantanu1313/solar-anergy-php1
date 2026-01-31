@@ -78,6 +78,7 @@
 
   </div>
 </section>
+<!-- STATS SECTION -->
 <section class="stats-wave-section">
   <div class="stats-container">
 
@@ -454,11 +455,75 @@
   </div>
 </section>
 
+<!-- ===== TESTIMONIALS SECTION =====   -->
+<section class="testimonials-section">
+
+  <!-- Title -->
+  <div class="testimonials-heading">
+    <h2>What People Are Saying</h2>
+    <p>Our Happy Clients</p>
+  </div>
+
+  <!-- Testimonials Layout -->
+  <div class="testimonials-container">
+
+    <!-- ✅ Left Big Card -->
+    <div class="testimonial-card big-card">
+
+      <div class="client-img">
+        <img src="<?= base_url('assets/image/People.jpg') ?>" alt="Client">
+      </div>
+
+      <p>
+        "Maha Solar Systems have been saving our electricity bills from 3 years
+        now. We must say that our Housing society has been successful in reducing
+        the maintenance costs for our residents."
+      </p>
+
+      <span class="client-name">Mr. Jagtap</span>
+    </div>
+
+    <!-- ✅ Right Side Cards -->
+    <div class="right-cards">
+
+      <!-- Card 1 -->
+      <div class="testimonial-card small-card">
+
+        <div class="client-img">
+          <img src="<?= base_url('assets/image/People.jpg') ?>" alt="Client">
+        </div>
+
+        <p>
+          "As an environment conscious person, I try to use as much solar as possible
+          so that we contribute to solving climate change..."
+        </p>
+
+        <span class="client-name">Mrs. Balchandani</span>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="testimonial-card small-card">
+
+        <div class="client-img">
+          <img src="<?= base_url('assets/image/People.jpg') ?>" alt="Client">
+        </div>
+
+        <p>
+          "Maha Solar has been very helpful in getting our carbon footprints low
+          to meet the industrial sustainable energy requirements..."
+        </p>
+
+        <span class="client-name">Mr. Bhansal</span>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
 
 <script src="<?= base_url('assets/js/index.js') ?>"></script>
-
-
-
 
 
 </body>
