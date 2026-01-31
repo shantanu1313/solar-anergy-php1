@@ -1,8 +1,13 @@
 <section class="services-strip">
+
+
+
   <div class="container-fluid">
 
+	<h1 class="text-center">Our Services</h1>
+
     <!-- Row 1 -->
-    <div class="strip-row">
+    <div class="strip-row mt-5">
   <span class="wave-bg"></span>
 
   <a href="<?= base_url('user/residential') ?>" class="service-box left">Residential</a>
