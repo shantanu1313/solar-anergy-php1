@@ -105,7 +105,7 @@
 
   <!-- ===== PRODUCTS SECTION ===== -->
 <section class="products-section">
-  <h2 class="section-title">Products</h2>
+  <h2 class="section-title text-dark">Products</h2>
 
   <div class="products-container">
 
@@ -138,7 +138,7 @@
 
 <!-- SERVICES SECTION -->
 <section class="services-section">
-  <h2 class="section-title">Services</h2>
+  <h2 class="section-title text-dark">Services</h2>
 
   <div class="services-container">
 
