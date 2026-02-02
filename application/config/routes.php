@@ -56,3 +56,5 @@ $route['translate_uri_dashes'] = FALSE;
 $route['about']='User/about';
 // $route['blogs_details/(:num)']='User/blogs_details/$1';
 $route['blogs']='User/blogs';
+
+
