@@ -6,21 +6,33 @@
 }
 
 h1,h2{
-  color:#0b2c4d;
+  color:#d7dce1;
 }
 
 /* ================= HERO ================= */
 .res-hero{
-  position:relative;
-  text-align:center;
-  padding:130px 20px;
+  position: relative;
+  height: 80vh;              /* ✅ Full Screen */
+
+  display: flex;
+  justify-content: center;    /* ✅ Center vertically */
+  align-items: center;        /* ✅ Center horizontally */
+
+  padding: 0 70px;
+  text-align: left;
+
   background:
-    linear-gradient(
-      rgba(212, 201, 97, 0.89),
-      rgba(233, 230, 51, 0.938)
-    ),
+    linear-gradient(rgba(0,0,0,0.55),
+                    rgba(0,0,0,0.55)),
     url("../image/service.jpg") center/cover no-repeat;
 }
+
+.res-hero h1,
+.res-hero p{
+  color: #fff !important;
+  text-shadow: 0px 4px 12px rgba(0,0,0,0.7);
+}
+
 
 /* Desktop text */
 .res-hero h1{
@@ -163,8 +175,8 @@ h1,h2{
     position:absolute;
     inset:0;
     background:linear-gradient(
-      rgba(240, 243, 73, 0.45),
-      rgba(228, 218, 83, 0.25)
+     rgba(0,0,0,0.55),
+     rgba(0,0,0,0.55),
     );
     z-index:0;
   }
