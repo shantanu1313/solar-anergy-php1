@@ -474,12 +474,6 @@ section {
 
   cursor: pointer;
   color: #0b2c4d;
-  transition: 0.3s ease;
-}
-
-.faq-question:hover {
-  background: #eb8715 !important;
-  color: white !important;
 }
 
 /* Icon */
@@ -591,8 +585,7 @@ section {
   font-family: "Poppins", sans-serif;
 
   /* ✅ Background Image */
-  background: url("../image/People.jpg") no-repeat center;
-  background-size: cover;
+  background: linear-gradient(to right, #fff8f0, #fdf3ff);
 
   position: relative;
 }
