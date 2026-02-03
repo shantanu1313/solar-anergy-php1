@@ -63,8 +63,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
-
-
 document.addEventListener("DOMContentLoaded", function () {
 
   const counters = document.querySelectorAll(".counter");

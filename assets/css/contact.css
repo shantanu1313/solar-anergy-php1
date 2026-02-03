@@ -23,7 +23,7 @@
 .contact-overlay {
     position: absolute;
     inset: 0;
-    background: rgba(240, 190, 40, 0.85);
+    background: rgba(75, 73, 67, 0.85);
     z-index: 1;
 }
 

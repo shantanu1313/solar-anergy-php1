@@ -218,11 +218,13 @@ section {
   align-items: center;
 }
 
-.stat-box h2 {
-  font-size: 55px;
-  font-weight: 700;
-  color: #444;
-  margin-bottom: 6px;
+/* ✅ Remove Number Background Box */
+.stat-box h2,
+.counter {
+  background: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  box-shadow: none !important;
 }
 
 .stat-box p {
@@ -233,7 +235,7 @@ section {
 @media (max-width: 768px) {
 
   .stats-wave-section {
-    padding: 40px 0; /* ✅ Height कमी */
+    padding: 40px 0; /* ✅ Height   */
   }
 
   .stats-container {
@@ -700,6 +702,16 @@ section {
     padding: 30px;
   }
 }
+/* ✅ Blog Cards Zoom Hover Effect */
+.blog-card {
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.blog-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 15px 35px rgba(0, 0, 0, 0.2);
+}
+
 
 
 /* =======================================================
