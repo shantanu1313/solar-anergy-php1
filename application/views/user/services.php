@@ -12,7 +12,7 @@
 
   <a href="<?= base_url('user/residential') ?>" class="service-box left">Residential</a>
   <a href="<?= base_url('user/industrial') ?>" class="service-box center">Industrial</a>
-  <a href="<?= base_url('user/educational') ?>" class="service-box right">Educational</a>
+  <a href="<?= base_url('user/commercial') ?>" class="service-box right">commercial</a>
 </div>
 
 
