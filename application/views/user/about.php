@@ -122,52 +122,56 @@
 
 
 
+<section class="business_verticals">
+  <div class="container">
 
-<!-- Business Verticals -->
-<section class="container-fluid py-5 business_verticals" data-aos="fade-up" data-aos-duration="1000">
+    <h2 class="text-center mb-5">Business Verticals</h2>
 
-    <!-- Title -->
-    <div class="text-center mb-5">
-        <h2 class="fw-bold">Business Verticals</h2>
+    <div class="row g-4 justify-content-center">
+
+      <div class="col-12 col-md-4">
+        <div class="bv-box orange">
+          <div class="bv-content">
+            <img src="<?= base_url('assets/image/vertical1.jpg') ?>" alt="">
+            <h5>Card Title</h5>
+            <p>
+              Some quick example text to build on the card title and make up
+              the bulk of the card's content.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-4">
+        <div class="bv-box red">
+          <div class="bv-content">
+            <img src="<?= base_url('assets/image/vertical1.jpg') ?>" alt="">
+            <h5>Card Title</h5>
+            <p>
+              Some quick example text to build on the card title and make up
+              the bulk of the card's content.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-4">
+        <div class="bv-box yellow">
+          <div class="bv-content">
+            <img src="<?= base_url('assets/image/vertical1.jpg') ?>" alt="">
+            <h5>Card Title</h5>
+            <p>
+              Some quick example text to build on the card title and make up
+              the bulk of the card's content.
+            </p>
+          </div>
+        </div>
+      </div>
+
     </div>
-
-    <!-- Cards Row -->
-    <div class="row g-4 px-4 px-lg-5">
-
-        <div class="col-12 col-md-4">
-            <div class="card rounded-4" style="width: 22rem;">
-                <img src="<?= base_url('assets/image/vertical1.jpg') ?>" class="card-img-top rounded-3" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-12 col-md-4">
-            <div class="card rounded-4" style="width: 22rem;">
-                <img src="<?= base_url('assets/image/vertical1.jpg') ?>" class="card-img-top rounded-3" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-12 col-md-4">
-            <div class="card rounded-4" style="width: 22rem;">
-                <img src="<?= base_url('assets/image/vertical1.jpg') ?>" class="card-img-top rounded-3" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                </div>
-            </div>
-        </div>
-
-
-
-    </div>
+  </div>
 </section>
+
 
 
 <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
