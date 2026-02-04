@@ -246,7 +246,7 @@
   </div>
 </section>
 
-<!-- ===== HERO TOP BANNER SECTION ===== -->
+<!-- =====  CONNECT WITH US ===== -->
 <section class="top-hero-banner">
 
   <div class="hero-banner-container">
@@ -276,8 +276,6 @@
   </div>
 
 </section>
-
-
 
 <!-- FAQ SECTION -->
 <section class="faq-section">
