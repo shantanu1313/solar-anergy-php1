@@ -205,13 +205,13 @@ section {
 .about-image img {
   width: 600px;
   border-radius: 25px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 10px 25px rgba(13, 13, 13, 0.12);
 }
 
 .about-text h2 {
   font-size: 46px;
   font-weight: 700;
-  color: #0a4d3c;
+  color: #000000;
   margin-bottom: 18px;
 }
 
@@ -361,7 +361,7 @@ section {
   max-width: 520px;
   margin-bottom: 20px;
 }
-/* ================= TOP HERO BANNER ================= */
+/* ================= CONNECT WITH US================= */
 
 .top-hero-banner {
   padding: 60px 0;
