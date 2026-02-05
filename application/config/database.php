@@ -75,10 +75,10 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
-	'hostname' => 'buuxnp7gmwvqtrlrhptx-mysql.services.clever-cloud.com',
-	'username' => 'u4wztoxmmpxwlskm',
-	'password' => 'loeQ7iz6kAYpNOasMEnT',
-	'database' => 'buuxnp7gmwvqtrlrhptx',
+	'hostname' => 'bb9ug2xb6d1gxw7zhscz-mysql.services.clever-cloud.com',
+	'username' => 'uzdrjojk4pejgwbr',
+	'password' => 'N0BPuwgtbQaD9pwcmUe5',
+	'database' => 'bb9ug2xb6d1gxw7zhscz',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
 	'pconnect' => FALSE,

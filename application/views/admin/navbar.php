@@ -33,7 +33,7 @@
 
   <ul id="homePages" class="sidebar-dropdown list-unstyled collapse">
     <li class="sidebar-item">
-      <a class="sidebar-link" href="home-hero.php">Hero Section</a>
+      <a class="sidebar-link" href="<?=base_url('home/home_hero')?>">Hero Section</a>
     </li>
 
     <li class="sidebar-item">
