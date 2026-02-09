@@ -6,42 +6,59 @@ class My_about extends CI_Model
     public function __construct()
     {
         parent::__construct();
-        $this->load->database(); // ✅ load once
+        $this->load->database();
     }
 
     /* ================= GET ================= */
 
-    public function get_hero()
+    // ADMIN – Brand List
+    public function get_brands()
     {
-        return $this->db->get('about_hero')->result();
+        return $this->db->get('about_brand')->result();
     }
 
+    // USER – Single Brand
     public function get_brand()
     {
-        return $this->db->get('about_brand')->row(); // single row
+        return $this->db->get('about_brand')->row();
     }
 
-    public function get_vision()
-    {
-        return $this->db->get('about_vision')->row(); // single row
-    }
+    // USER – Vision (single)
+    // ADMIN – list
+public function get_visions()
+{
+    return $this->db->get('about_vision')->result();
+}
 
+// USER – single
+public function get_vision()
+{
+    return $this->db->get('about_vision')->row();
+}
+
+
+    // TEAM – List
     public function get_team()
     {
         return $this->db->get('team_members')->result();
     }
 
+    // BUSINESS VERTICALS – List
     public function get_verticals()
     {
         return $this->db->get('business_verticals')->result();
     }
 
-    /* ================= INSERT ================= */
-
-    public function insert_hero($data)
+    // COMMON – Get single row by ID (🔥 THIS FIXES EDIT ERROR)
+    public function get_by_id($table, $id)
     {
-        return $this->db->insert('about_hero', $data);
+        return $this->db
+                    ->where('id', $id)
+                    ->get($table)
+                    ->row();
     }
+
+    /* ================= INSERT ================= */
 
     public function insert_brand($data)
     {
@@ -63,29 +80,21 @@ class My_about extends CI_Model
         return $this->db->insert('business_verticals', $data);
     }
 
-    /* ================= COMMON CRUD ================= */
-
-    public function get_by_id($table, $id)
-    {
-        return $this->db
-                    ->where('id', $id)
-                    ->get($table)
-                    ->row();
-    }
+    /* ================= UPDATE ================= */
 
     public function update_by_id($table, $id, $data)
     {
-        $this->db->where('id', $id)
-                 ->update($table, $data);
-
-        return ($this->db->affected_rows() > 0);
+        return $this->db
+                    ->where('id', $id)
+                    ->update($table, $data);
     }
+
+    /* ================= DELETE ================= */
 
     public function delete_by_id($table, $id)
     {
-        $this->db->where('id', $id)
-                 ->delete($table);
-
-        return ($this->db->affected_rows() > 0);
+        return $this->db
+                    ->where('id', $id)
+                    ->delete($table);
     }
 }

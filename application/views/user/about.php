@@ -23,9 +23,10 @@
   <div class="row align-items-center g-3">
 
     <div class="col-12 col-md-6">
-      <h1 class="title"><?= $brand->title ?></h1>
-      <p><?= nl2br($brand->description) ?></p>
+    <h1><?= $brand->title ?></h1>
+<p><?= $brand->description ?></p>
     </div>
+
 
     <div class="col-12 col-md-6 text-center">
       <div class="image-card">

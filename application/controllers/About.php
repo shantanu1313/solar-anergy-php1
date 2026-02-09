@@ -19,47 +19,50 @@ class About extends CI_Controller
     }
 
     /* ================= UPLOAD HELPER ================= */
-
     private function upload_files($fields)
-    {
-        $config['upload_path']   = FCPATH.'uploads/';
-        $config['allowed_types'] = 'jpg|jpeg|png|webp';
-        $config['encrypt_name']  = TRUE;
-        $config['max_size']      = 4096;
+{
+    $config['upload_path']   = FCPATH.'uploads/';
+    $config['allowed_types'] = '*'; // 🔥 TEMP FIX (development)
+    $config['max_size']      = 5120; // 5MB
+    $config['encrypt_name']  = TRUE;
 
-        $this->load->library('upload');
-        $uploaded = [];
+    $this->load->library('upload');
 
-        foreach ($fields as $field) {
-            if (!empty($_FILES[$field]['name'])) {
+    $uploaded = [];
 
-                $this->upload->initialize($config);
+    foreach ($fields as $field) {
+        if (!empty($_FILES[$field]['name'])) {
 
-                if (!$this->upload->do_upload($field)) {
-                    echo $this->upload->display_errors();
-                    exit;
-                }
+            $this->upload->initialize($config);
 
-                $data = $this->upload->data();
-                $uploaded[$field] = $data['file_name'];
+            if (!$this->upload->do_upload($field)) {
+                echo "<h3>UPLOAD ERROR</h3>";
+                echo $this->upload->display_errors();
+                exit;
             }
+
+            $data = $this->upload->data();
+            $uploaded[$field] = $data['file_name'];
         }
-        return $uploaded;
     }
+
+    return $uploaded;
+}
 
     /* ================= LIST PAGES ================= */
 
-    public function home_brand()
-    {
-        $data['brand'] = $this->My_about->get_brand();
-        $this->page('home_brand', $data);
-    }
+public function home_brand()
+{
+    $data['brand'] = $this->My_about->get_brands(); // ✅ MANY
+    $this->page('home_brand', $data);
+}
 
-    public function home_vision()
-    {
-        $data['vision'] = $this->My_about->get_vision();
-        $this->page('home_vision', $data);
-    }
+public function home_vision()
+{
+    $data['vision'] = $this->My_about->get_visions(); // ✅ ARRAY
+    $this->page('home_vision', $data);
+}
+
 
     public function home_team()
     {
@@ -185,23 +188,23 @@ class About extends CI_Controller
         $this->My_about->update_by_id('about_vision', $id, $data);
         redirect('about/home_vision');
     }
+public function update_team($id)
+{
+    $data = [
+        'name'       => $this->input->post('name'),
+        'role'       => $this->input->post('role'),
+        'experience' => $this->input->post('experience'),
+    ];
 
-    public function update_team($id)
-    {
-        $data = [
-            'name'       => $this->input->post('name'),
-            'role'       => $this->input->post('role'),
-            'experience' => $this->input->post('experience'),
-        ];
-
-        if (!empty($_FILES['image']['name'])) {
-            $file = $this->upload_files(['image']);
-            $data['image'] = $file['image'];
-        }
-
-        $this->My_about->update_by_id('team_members', $id, $data);
-        redirect('about/home_team');
+    if (!empty($_FILES['image']['name'])) {
+        $file = $this->upload_files(['image']);
+        $data['image'] = $file['image'];
     }
+
+    $this->My_about->update_by_id('team_members', $id, $data);
+    redirect('about/home_team');
+}
+
 
     public function update_vertical($id)
     {
@@ -228,3 +231,4 @@ class About extends CI_Controller
         redirect($redirect);
     }
 }
+

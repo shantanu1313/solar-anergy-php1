@@ -17,9 +17,9 @@ class User extends CI_Controller {
     }
 
     /* ================= ABOUT ================= */
- public function about()
+public function about()
 {
-    $data['brand']     = $this->My_about->get_brand();
+    $data['brand']     = $this->My_about->get_brand(); // ✅ SINGLE ROW
     $data['vision']    = $this->My_about->get_vision();
     $data['team']      = $this->My_about->get_team();
     $data['verticals'] = $this->My_about->get_verticals();
@@ -28,6 +28,7 @@ class User extends CI_Controller {
     $this->load->view('user/about', $data);
     $this->load->view('user/footer');
 }
+
 
 
 
