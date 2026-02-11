@@ -78,11 +78,19 @@ public function about()
 
  
     public function commercial()
-    {
-        $this->load->view("user/navbar");
-        $this->load->view("user/commercial");
-        $this->load->view("user/footer");
-    }
+{
+    $this->load->model('Commercial_model');
+
+    $data['about']    = $this->Commercial_model->commercial_about();
+    $data['points']   = $this->Commercial_model->commercial_points();
+    $data['suitable'] = $this->Commercial_model->commercial_suitable();
+    $data['benefits'] = $this->Commercial_model->commercial_benefits();
+
+    $this->load->view("user/navbar");
+    $this->load->view("user/commercial", $data);
+    $this->load->view("user/footer");
+}
+
 public function industrial()
 {
     $this->load->model('Industrial_model');

@@ -139,6 +139,33 @@
 </li>
 
 
+      <li class="sidebar-item">
+  <a data-bs-toggle="collapse" href="#commercialPages" class="sidebar-link">
+    <span class="align-middle">Commercial Page</span>
+  </a>
+
+  <ul id="commercialPages" class="sidebar-dropdown list-unstyled collapse">
+   
+
+    <li class="sidebar-item">
+      <a class="sidebar-link" href="<?= base_url('commercial/commercial_about') ?>">About Section</a>
+    </li>
+
+     <li class="sidebar-item">
+      <a class="sidebar-link" href="<?= base_url('commercial/commercial_points') ?>">Points Section</a>
+    </li>
+
+     <li class="sidebar-item">
+      <a class="sidebar-link" href="<?= base_url('commercial/commercial_suitable') ?>">Suitable Section</a>
+    </li>
+
+
+    <li class="sidebar-item">
+      <a class="sidebar-link" href="<?= base_url('commercial/commercial_benefits') ?>">Benefits Section</a>
+    </li>
+  </ul>
+</li>
+
 
       </ul>
     </div>
