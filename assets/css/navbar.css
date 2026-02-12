@@ -9,10 +9,17 @@
   background-color: #01329f !important;	
   border-bottom:2px solid transparent;
   border-image:linear-gradient(260deg,#3df2f2,#0f0f0f) 4;
-  position:sticky;
+  position:fixed;        /* ✅ FIXED */
   top:0;
+  left:0;
+  width:100%;
   z-index:999;
   font-family:'Poppins',sans-serif;
+}
+
+/* ✅ Prevent Content Overlap */
+body{
+  padding-top:90px;   /* navbar height adjust if needed */
 }
 
 /* ================= CONTAINER ================= */
@@ -33,7 +40,7 @@
   font-size:28px;
   font-weight:800;
   color:#f7f8fa;
-  
+  border: #dae8f5 solid 2px;
 }
 
 .ms-logo span{
@@ -57,10 +64,8 @@
   font-weight:600;
   position:relative;
   padding:6px 0;
-	
 }
 
-/* underline hover / active */
 .ms-menu a::after{
   content:"";
   position:absolute;
@@ -71,8 +76,9 @@
   background:linear-gradient(20deg,#baf1f1,#4d24aa);
   transition:.3s;
 }
+
 .ms-menu a:hover{
-	color :orange;
+  color:orange;
 }
 
 .ms-menu a:hover::after,
@@ -96,7 +102,7 @@
   box-shadow:0 14px 34px rgba(0,0,0,.18);
   display:none;
   padding:8px 0;
-	margin-top: 5px;
+  margin-top:5px;
 }
 
 .ms-dropdown-menu a{
@@ -121,26 +127,18 @@
 /* ================= CTA BUTTON ================= */
 
 .ms-btn{
-  padding:50px 100px;
-  background-color:rgb(253, 162, 17);
+  background-color:rgb(253,162,17);
   color:#ffffff !important;
-	padding:10px !important;
-	border-radius: 7px !important;
-
-  font-size:19px;
-  font-weight:800;
+  padding:10px 22px;      /* ✅ cleaned */
+  border-radius:7px;
+  font-size:16px;
+  font-weight:700;
   letter-spacing:.4px;
-
-  /* border:1px solid #ffffff; */
-  /* border-radius:3px; */
-
   display:inline-flex;
   align-items:center;
   justify-content:center;
-
   box-shadow:0 10px 28px rgba(0,0,0,.25);
   transition:.18s ease;
-	
 }
 
 .ms-btn:hover{
@@ -181,15 +179,12 @@
     top:100%;
     left:0;
     width:100%;
-
     background:linear-gradient(260deg,#eb8715,#b5b0e3);
     flex-direction:column;
     align-items:flex-start;
     gap:18px;
-
     padding:26px;
     display:none;
-
     box-shadow:0 18px 40px rgba(0,0,0,.25);
     z-index:1000;
   }
@@ -199,24 +194,22 @@
     animation:slideDown .3s ease;
   }
 
-
   .ms-menu a{
     color:#ffffff;
     font-size:16px;
   }
 
   .ms-dropdown-menu{
-  display:none;
-  position:static;
-  background:transparent;
-  box-shadow:none;
-  padding-left:16px;
-}
-
+    display:none;
+    position:static;
+    background:transparent;
+    box-shadow:none;
+    padding-left:16px;
+  }
 
   .ms-dropdown:hover .ms-dropdown-menu{
-  display:block;
-}
+    display:block;
+  }
 
   .ms-btn{
     width:100%;
@@ -235,7 +228,7 @@
 /* ================= LOGO ================= */
 
 .ms-logo img{
-  height:52px;        /* desktop size */
+  height:52px;
   width:auto;
   object-fit:contain;
   display:block;
@@ -246,4 +239,3 @@
     height:42px;
   }
 }
-
