@@ -24,69 +24,84 @@
 </a> -->
 
 
- <!-- ✅ HERO SECTION -->
+<!-- ✅ HERO SECTION -->
+<?php if(!empty($hero_list)) { ?>
+  <?php foreach($hero_list as $hero) { ?>
+
 <section class="hero-section">
 
   <!-- Background Video -->
+  <?php if(!empty($hero->video)) { ?>
   <video autoplay muted loop playsinline class="hero-video">
-    <source src="<?= base_url('assets/video/solar.mp4') ?>" type="video/mp4">
+    <source src="<?= base_url('uploads/'.$hero->video) ?>" type="video/mp4">
   </video>
+  <?php } ?>
 
   <!-- Overlay -->
   <div class="hero-overlay"></div>
-   <!-- Hero Content -->
-  <div class="hero-content">
 
-
-  <!-- Content -->
+  <!-- Hero Content -->
   <div class="hero-content">
     
     <h1>
-      Power Your Future <br>
-      With Solar Energy
+      <?= $hero->title ?>
     </h1>
 
-    <p>Clean, Renewable & Affordable Solar Solutions</p>
+    <p><?= $hero->sub_title ?></p>
 
-    <a href="#" class="main-btn">Explore More</a>
+    <a href="#" class="main-btn">
+      <?= $hero->button_text ?>
+    </a>
+
   </div>
 
 </section>
 
+  <?php } ?>
+<?php } ?>
+
 <!-- ABOUT US SECTION -->
+<!-- ✅ ABOUT SECTION -->
+<?php if(!empty($about)) { ?>
+
 <section class="about-section">
 
   <div class="about-container">
 
     <!-- Left Image -->
     <div class="about-image">
-      <img src="<?= base_url('assets/image/blog2.webp') ?>" alt="About Solar">
+      <?php if(!empty($about->image)) { ?>
+        <img src="<?= base_url('uploads/about/'.$about->image) ?>" alt="About Solar">
+      <?php } ?>
     </div>
 
     <!-- Right Content -->
     <div class="about-text">
-      <h2>About Us</h2>
+
+      <h2><?= $about->title ?></h2>
 
       <p>
-        Agni Solar has 3 decades of experience as a leader and innovator
-        in the solar energy space. Our varied expertise includes all major
-        verticals of solar power systems and solutions.
-      </p>
-
+        <?= $about->description_1 ?>
+      </p> 
+      
       <p>
-        Our aim is to be a solar energy brand that evokes trust, confidence
-        and reliability. We guide customers into taking the right decisions
-        for all their solar energy needs.
+        <?= $about->description_2 ?>
       </p>
 
-      <!-- ✅ Button Added Here -->
-      <a href="<?= base_url('user/about') ?>" class="main-btn">Learn More</a>
-
+      <?php if(!empty($about->button_text)) { ?>
+        <a href="<?= base_url('user/about') ?>" class="main-btn">
+          <?= $about->button_text ?>
+        </a>
+      <?php } ?>
 
     </div>
 
   </div>
+
 </section>
+
+<?php } ?>
+
 <!-- STATS SECTION -->
 <section class="stats-wave-section">
   <div class="stats-container">
@@ -113,69 +128,72 @@
 
 
   <!-- ===== PRODUCTS SECTION ===== -->
+<?php if(!empty($products)) { ?>
+
 <section class="products-section">
-  <h2 class="section-title text-dark">Products</h2>
+  <h2 class="section-title text-dark"><?= $products->heading ?></h2>
 
   <div class="products-container">
 
-    <!-- Left Side Text -->
     <div class="products-text">
-      <h3>Our Solar Products</h3>
+      <h3><?= $products->title ?></h3>
 
-      <!-- ✅ Short Description (Instead of Points) -->
-      <p>
-        We provide advanced solar products including water heaters, pumps,
-        street lights, and on-grid systems designed for homes, businesses,
-        and industries.
-      </p>
+      <p><?= $products->description ?></p>
 
-      <!-- ✅ Button Below Description -->
-      <a href="<?= base_url('user/product') ?>" class="main-btn">View Products</a>
-
+      <?php if(!empty($products->button_text)) { ?>
+        <a href="<?= base_url('user/product') ?>" class="main-btn">
+          <?= $products->button_text ?>
+        </a>
+      <?php } ?>
     </div>
 
-    <!-- Right Side Image -->
     <div class="products-image">
-      <img src="<?= base_url('assets/image/solar_street.webp') ?>" alt="Solar Products">
+      <?php if(!empty($products->image)) { ?>
+        <img src="<?= base_url('uploads/products/'.$products->image) ?>" alt="Solar Products">
+      <?php } ?>
     </div>
 
   </div>
 </section>
+
+<?php } ?>
 
 
 
 
 <!-- SERVICES SECTION -->
+<?php if(!empty($service)) { ?>
+
 <section class="services-section">
   <h2 class="section-title text-dark">Services</h2>
 
   <div class="services-container">
 
-    <!-- Left Side Image -->
     <div class="services-image">
-      <img src="<?= base_url('assets/image/service.webp') ?>" alt="Services Image">
+      <?php if(!empty($service->image)) { ?>
+        <img src="<?= base_url($service->image) ?>" alt="Services">
+      <?php } ?>
     </div>
 
-    <!-- Right Side Content -->
     <div class="services-text">
-      <h3>Industrial & <span>Commercial Services</span></h3>
+      <h3><?= $service->title ?></h3>
+      <p><?= $service->description ?></p>
 
-      <!-- ✅ Short Description Instead of Points -->
-      <p>
-        We provide complete solar solutions for residential, commercial, and
-        industrial needs. Our expert services ensure sustainable energy,
-        lower electricity bills, and long-term reliability.
-      </p>
-
-      <!-- ✅ Button Below Description -->
-      <a href="<?= base_url('user/services') ?>" class="main-btn">Explore Services</a>
-
+      <?php if(!empty($service->button_text)) { ?>
+        <a href="<?= base_url('user/services') ?>" class="main-btn">
+          <?= $service->button_text ?>
+        </a>
+      <?php } ?>
     </div>
 
   </div>
 </section>
 
+<?php } ?>
+
 <!-- BLOGS SECTION -->
+<?php if(!empty($blogs)) { ?>
+
 <section class="blogs-section py-5">
   <div class="container">
 
@@ -186,90 +204,71 @@
 
     <div class="row justify-content-center g-4">
 
-      <!-- Card 1 -->
+      <?php foreach($blogs as $blog) { ?>
+
       <div class="col-lg-4 col-md-6">
         <div class="card blog-card shadow-lg border-0">
-          <img src="<?= base_url('assets/image/ind1.webp') ?>" class="card-img-top" alt="Blog">
+
+          <?php if(!empty($blog->image)) { ?>
+            <img src="<?= base_url('uploads/'.$blog->image) ?>" 
+                 class="card-img-top" 
+                 alt="Blog">
+          <?php } ?>
 
           <div class="card-body text-center">
+
             <h5 class="card-title fw-bold">
-              Save Electricity With Solar Power Systems
+              <?= $blog->title ?>
             </h5>
 
             <p class="card-text text-muted">
-              Choose Maha Solar Systems
+              <?= $blog->description_one ?>
             </p>
 
-            <a href="<?= base_url('user/blogs') ?>" class="blog-btn">Read Blogs</a>
+            <a href="<?= site_url('user/blogs') ?>" class="blog-btn">
+              <?= !empty($blog->button_text) ? $blog->button_text : 'Read Blogs' ?>
+            </a>
+
           </div>
         </div>
       </div>
 
-      <!-- Card 2 -->
-      <div class="col-lg-4 col-md-6">
-        <div class="card blog-card shadow-lg border-0">
-          <img src="<?= base_url('assets/image/ind2.webp') ?>" class="card-img-top" alt="Blog">
-
-          <div class="card-body text-center">
-            <h5 class="card-title fw-bold">
-              How Much Carbon Footprint Can Solar Save ?
-            </h5>
-
-            <p class="card-text text-muted">
-              Choose Maha Solar Systems
-            </p>
-<a href="<?= site_url('user/blogs') ?>" class="blog-btn">Read Blogs</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Card 3 -->
-      <div class="col-lg-4 col-md-6">
-        <div class="card blog-card shadow-lg border-0">
-          <img src="<?= base_url('assets/image/ind3.webp') ?>" class="card-img-top" alt="Blog">
-
-          <div class="card-body text-center">
-            <h5 class="card-title fw-bold">
-              10 Benefits Of Solar Cooking Your Food
-            </h5>
-
-            <p class="card-text text-muted">
-              Choose Maha Solar Systems
-            </p>
-
-      <a href="<?= site_url('user/blogs')?>" class=" blog-btn">Read Blogs</a>
-          </div>
-        </div>
-      </div>
+      <?php } ?>
 
     </div>
   </div>
 </section>
 
+<?php } ?>
+
 <!-- =====  CONNECT WITH US ===== -->
+<!-- ===== LEADING SECTION ===== -->
+<?php if(!empty($leading)) { ?>
+
 <section class="top-hero-banner">
 
   <div class="hero-banner-container">
 
     <!-- Left Image -->
     <div class="hero-banner-img">
-        <img src="<?= site_url('assets/image/CONNECT.webp') ?>" alt="Solar Banner">
-      </div>
+      <?php if(!empty($leading->image)) { ?>
+        <img src="<?= base_url('uploads/'.$leading->image) ?>" alt="Solar Banner">
+      <?php } ?>
+    </div>
 
     <!-- Center Text -->
     <div class="hero-banner-text">
       <h1>
-        India’s Leading Integrated Solar <br>
-        Energy
+        <?= $leading->main_heading ?>
       </h1>
-      <p>Smart Solar Energy</p>
+      <p><?= $leading->sub_heading ?></p>
     </div>
 
     <!-- Right Button -->
     <div class="hero-banner-btn">
-      <a href="<?=base_url('user/contact') ?>" class="connect-btn">
+      <a href="<?= base_url('user/contact') ?>" class="connect-btn">
         <i class="fa-solid fa-phone"></i>
-        CONNECT WITH US
+        <?= !empty($leading->button_text) ? $leading->button_text : 'CONNECT WITH US' ?>
       </a>
     </div>
 
@@ -277,191 +276,57 @@
 
 </section>
 
+<?php } ?>
+
 <!-- FAQ SECTION -->
+<!-- ===== FAQ SECTION ===== -->
+<?php if(!empty($faqs)) { ?>
+
 <section class="faq-section">
   <h2 class="faq-title">Frequently Asked Questions</h2>
 
   <div class="faq-container">
 
+    <?php 
+      $half = ceil(count($faqs) / 2);
+      $leftColumn  = array_slice($faqs, 0, $half);
+      $rightColumn = array_slice($faqs, $half);
+    ?>
+
     <!-- Left Column -->
     <div class="faq-column">
-
-      <!-- 1 -->
-      <div class="faq-item">
-        <button class="faq-question">
-          What is Solar Energy?
-          <span>+</span>
-        </button>
-        <div class="faq-answer">
-          <p>
-            Solar energy is energy obtained from sunlight and converted into
-            electricity or heat using solar systems.
-          </p>
+      <?php foreach($leftColumn as $faq) { ?>
+        <div class="faq-item">
+          <button class="faq-question">
+            <?= $faq->question ?>
+            <span>+</span>
+          </button>
+          <div class="faq-answer">
+            <p><?= $faq->answer ?></p>
+          </div>
         </div>
-      </div>
-
-      <!-- 2 -->
-      <div class="faq-item">
-        <button class="faq-question">
-          How long do solar panels last?
-          <span>+</span>
-        </button>
-        <div class="faq-answer">
-          <p>
-            Solar panels generally last 25–30 years with proper maintenance.
-          </p>
-        </div>
-      </div>
-
-      <!-- 3 -->
-      <div class="faq-item">
-        <button class="faq-question">
-          Can solar panels work on cloudy days?
-          <span>+</span>
-        </button>
-        <div class="faq-answer">
-          <p>
-            Yes, solar panels still generate electricity even on cloudy days,
-            though output may be lower.
-          </p>
-        </div>
-      </div>
-
-      <!-- 4 -->
-      <div class="faq-item">
-        <button class="faq-question">
-          What maintenance is required for solar systems?
-          <span>+</span>
-        </button>
-        <div class="faq-answer">
-          <p>
-            Solar systems require minimal maintenance like cleaning and regular
-            inspection for best performance.
-          </p>
-        </div>
-      </div>
-
-      <!-- 5 -->
-      <div class="faq-item">
-        <button class="faq-question">
-          Do you provide installation support?
-          <span>+</span>
-        </button>
-        <div class="faq-answer">
-          <p>
-            Yes, we provide complete installation, service, and maintenance
-            support for all solar projects.
-          </p>
-        </div>
-      </div>
-
-      <!-- 6 -->
-      <div class="faq-item">
-        <button class="faq-question">
-          How long does solar installation take?
-          <span>+</span>
-        </button>
-        <div class="faq-answer">
-          <p>
-            Installation usually takes 2–7 days depending on project size and site
-            requirements.
-          </p>
-        </div>
-      </div>
-
+      <?php } ?>
     </div>
 
-    <!-- Right Column (Same Questions Copy) -->
+    <!-- Right Column -->
     <div class="faq-column">
-
-      <!-- 1 -->
-      <div class="faq-item">
-        <button class="faq-question">
-          What is Solar Energy?
-          <span>+</span>
-        </button>
-        <div class="faq-answer">
-          <p>
-            Solar energy is energy obtained from sunlight and converted into
-            electricity or heat using solar systems.
-          </p>
+      <?php foreach($rightColumn as $faq) { ?>
+        <div class="faq-item">
+          <button class="faq-question">
+            <?= $faq->question ?>
+            <span>+</span>
+          </button>
+          <div class="faq-answer">
+            <p><?= $faq->answer ?></p>
+          </div>
         </div>
-      </div>
-
-      <!-- 2 -->
-      <div class="faq-item">
-        <button class="faq-question">
-          How long do solar panels last?
-          <span>+</span>
-        </button>
-        <div class="faq-answer">
-          <p>
-            Solar panels generally last 25–30 years with proper maintenance.
-          </p>
-        </div>
-      </div>
-
-      <!-- 3 -->
-      <div class="faq-item">
-        <button class="faq-question">
-          Can solar panels work on cloudy days?
-          <span>+</span>
-        </button>
-        <div class="faq-answer">
-          <p>
-            Yes, solar panels still generate electricity even on cloudy days,
-            though output may be lower.
-          </p>
-        </div>
-      </div>
-
-      <!-- 4 -->
-      <div class="faq-item">
-        <button class="faq-question">
-          What maintenance is required for solar systems?
-          <span>+</span>
-        </button>
-        <div class="faq-answer">
-          <p>
-            Solar systems require minimal maintenance like cleaning and regular
-            inspection for best performance.
-          </p>
-        </div>
-      </div>
-
-      <!-- 5 -->
-      <div class="faq-item">
-        <button class="faq-question">
-          Do you provide installation support?
-          <span>+</span>
-        </button>
-        <div class="faq-answer">
-          <p>
-            Yes, we provide complete installation, service, and maintenance
-            support for all solar projects.
-          </p>
-        </div>
-      </div>
-
-      <!-- 6 -->
-      <div class="faq-item">
-        <button class="faq-question">
-          How long does solar installation take?
-          <span>+</span>
-        </button>
-        <div class="faq-answer">
-          <p>
-            Installation usually takes 2–7 days depending on project size and site
-            requirements.
-          </p>
-        </div>
-      </div>
-
+      <?php } ?>
     </div>
 
   </div>
 </section>
 
+<?php } ?>
 <!-- ===== TESTIMONIALS SECTION =====   -->
 <section class="testimonials-section">
 

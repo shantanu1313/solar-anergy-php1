@@ -17,7 +17,16 @@ class User extends CI_Controller {
     public function index()
     {
         $this->load->view("user/navbar");
-        $this->load->view("user/index");
+
+        $data['hero_list'] = $this->db->where('status',1)->order_by('id','DESC')->get('hero_banner')->result();
+         $data['about'] = $this->db->get('about_us')->row();
+    $data['products'] = $this->db->get('products_section')->row();
+    $data['service'] = $this->db->limit(1)->get('home_services')->row();
+     $data['blogs'] = $this->db->order_by('id','DESC')->get('blogs_home')->result();
+  $data['leading']   = $this->db->get('leading_section')->row();
+  $data['faqs'] = $this->db->order_by('id','DESC')->get('faqs')->result();
+
+        $this->load->view("user/index",$data);
         $this->load->view("user/footer");
     }
 

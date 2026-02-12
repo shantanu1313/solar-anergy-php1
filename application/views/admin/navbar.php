@@ -37,20 +37,30 @@
     </li>
 
     <li class="sidebar-item">
-      <a class="sidebar-link" href="home-about.php">About Section</a>
+      <a class="sidebar-link" href="<?=base_url('home/about')?>">About Section</a>
+    </li>
+
+        <li class="sidebar-item">
+      <a class="sidebar-link" href="<?= base_url('home/home_products') ?>">Products</a>
     </li>
 
     <li class="sidebar-item">
-      <a class="sidebar-link" href="home-services.php">Services</a>
+      <a class="sidebar-link" href="<?=base_url('home/home_services') ?>">Services</a>
     </li>
 
-    <li class="sidebar-item">
-      <a class="sidebar-link" href="home-projects.php">Projects</a>
-    </li>
 
     <li class="sidebar-item">
-      <a class="sidebar-link" href="home-blog.php">Blog</a>
+      <a class="sidebar-link" href="<?=base_url('home/home_blogs')?>">Blog</a>
     </li>
+      <li class="sidebar-item">
+      <a class="sidebar-link" href="<?=base_url('home/home_leading')?>">leading solar </a>
+    </li>
+      <li class="sidebar-item">
+      <a class="sidebar-link" href="<?=base_url('home/home_faq')?>">Feq </a>
+    </li>
+
+
+
 
     <li class="sidebar-item">
       <a class="sidebar-link" href="home-contact.php">Contact Info</a>
