@@ -158,6 +158,29 @@
 </li>
 
 
+      <li class="sidebar-item">
+  <a data-bs-toggle="collapse" href="#servicePages" class="sidebar-link">
+    <span class="align-middle">service Page</span>
+  </a>
+
+  <ul id="servicePages" class="sidebar-dropdown list-unstyled collapse">
+   
+
+    <li class="sidebar-item">
+      <a class="sidebar-link" href="<?= base_url('service/service_card') ?>"> Card Section</a>
+    </li>
+
+     <li class="sidebar-item">
+      <a class="sidebar-link" href="<?= base_url('service/service_points') ?>"> Points Section</a>
+    </li>
+
+    <li class="sidebar-item">
+      <a class="sidebar-link" href="<?= base_url('service/service_details') ?>"> Details Section</a>
+    </li>
+  </ul>
+</li>
+
+
 
 
   <ul id="aboutPages" class="sidebar-dropdown list-unstyled collapse">
