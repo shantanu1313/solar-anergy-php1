@@ -10,6 +10,10 @@ class User extends CI_Controller {
         $this->load->model('My_about');
         $this->load->model('Solar_water_heater_model');
         $this->load->model('Solar_water_pump_model');
+		$this->load->model('On_grid_solar_model');
+		$this->load->model('Ssl_hero_model');
+        $this->load->model('Ssl_impact_model');
+        $this->load->model('Ssl_benefits_model');
 		 $this->load->database();
     }
 
@@ -45,11 +49,15 @@ class User extends CI_Controller {
 
     /* ================= PRODUCTS ================= */
     public function product()
-    {
-        $this->load->view("user/navbar");
-        $this->load->view("user/product");
-        $this->load->view("user/footer");
-    }
+{
+    $this->load->model('Product_model');   // 🔥 model load
+    $data['products'] = $this->Product_model->get_all(); // DB data
+
+    $this->load->view("user/navbar");
+    $this->load->view("user/product", $data); // data pass kelay
+    $this->load->view("user/footer");
+}
+
 
     public function solar_water_heater()
     {
@@ -71,17 +79,21 @@ class User extends CI_Controller {
 
     public function on_grid_solar()
     {
+		$data['solar'] = $this->On_grid_solar_model->get_latest();
         $this->load->view("user/navbar");
-        $this->load->view("user/on_grid_solar");
+        $this->load->view("user/on_grid_solar",$data);
         $this->load->view("user/footer");
     }
 
-    public function solar_street_light()
-    {
-        $this->load->view("user/navbar");
-        $this->load->view("user/solar_street_light");
-        $this->load->view("user/footer");
-    }
+    public function solar_street_light(){
+    $data['hero'] = $this->Ssl_hero_model->get_all();
+    $data['impact'] = $this->Ssl_impact_model->get_all();
+    $data['benefits'] = $this->Ssl_benefits_model->get_all();
+
+    $this->load->view('user/navbar');        // ← ADD THIS
+    $this->load->view('User/solar_street_light',$data);
+    $this->load->view('user/footer');        // ← ADD THIS
+}
 
     /* ================= SERVICES ================= */
 
@@ -179,4 +191,39 @@ public function blog_details($id)
         $this->load->view("user/footer");
     }
 
+public function save_quote()
+{
+    $name     = $this->input->post('name', TRUE);
+    $email    = $this->input->post('email', TRUE);
+    $phone    = $this->input->post('phone', TRUE);
+    $service  = $this->input->post('service', TRUE);
+    $quantity = $this->input->post('quantity', TRUE);
+    $source   = $this->input->post('source', TRUE);
+    $message  = $this->input->post('message', TRUE);
+
+    // Basic Validation
+    if (empty($name) || empty($email) || empty($phone) || empty($service) || empty($source)) {
+        echo "Please fill all required fields!";
+        return;
+    }
+
+    // Insert Data
+    $data = array(
+        'name'         => $name,
+        'email'        => $email,
+        'phone'        => $phone,
+        'service_type' => $service,
+        'quantity'     => $quantity,
+        'source'       => $source,
+        'message'      => $message,
+        'status'       => 'New',
+        'created_at'   => date('Y-m-d H:i:s')
+    );
+
+    if($this->db->insert('quotes', $data)){
+        echo "Quote Submitted Successfully!";
+    } else {
+        echo "Something went wrong. Please try again.";
+    }
+}
 }
