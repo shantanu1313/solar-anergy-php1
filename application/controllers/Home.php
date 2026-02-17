@@ -542,4 +542,89 @@ public function delete_home_faq($id)
 
     redirect('home/home_faq');
 }
+
+  
+public function testimonial($id = null)
+{
+    $data['testimonial'] = $id 
+        ? $this->db->get_where('testimonials', ['id'=>$id])->row()
+        : null;
+
+    $data['testimonials'] = $this->db
+        ->order_by('id','DESC')
+        ->get('testimonials')
+        ->result();
+
+    $this->navbar();
+    $this->load->view("admin/home/testimonial", $data);
+    $this->footer();
+}
+
+
+public function save_testimonial()
+{
+    $id = $this->input->post('id');
+
+    $upload_path = FCPATH . 'uploads/testimonials/';
+
+    if (!is_dir($upload_path)) {
+        mkdir($upload_path, 0777, true);
+    }
+
+    $config = [
+        'upload_path'   => $upload_path,
+        'allowed_types' => 'jpg|jpeg|png|webp',
+        'max_size'      => 2048,
+        'encrypt_name'  => TRUE
+    ];
+
+    $this->load->library('upload', $config);
+
+    $imageName = null;
+
+    if (!empty($_FILES['image']['name']) && $this->upload->do_upload('image')) {
+
+        $imageName = $this->upload->data('file_name');
+
+        if ($id) {
+            $old = $this->db->get_where('testimonials', ['id'=>$id])->row();
+            if ($old && $old->image && file_exists($upload_path.$old->image)) {
+                unlink($upload_path.$old->image);
+            }
+        }
+    }
+
+    $data = [
+        'name'    => $this->input->post('name', TRUE),
+        'role'    => $this->input->post('role', TRUE),
+        'message' => $this->input->post('message', TRUE),
+        'rating'  => 5
+    ];
+
+    if ($imageName) $data['image'] = $imageName;
+
+    $id
+        ? $this->db->update('testimonials', $data, ['id'=>$id])
+        : $this->db->insert('testimonials', $data);
+
+    redirect('home/testimonial');
+}
+
+
+public function delete_testimonial($id)
+{
+    $upload_path = FCPATH . 'uploads/testimonials/';
+
+    $row = $this->db->get_where('testimonials', ['id'=>$id])->row();
+
+    if ($row) {
+        if ($row->image && file_exists($upload_path.$row->image)) {
+            unlink($upload_path.$row->image);
+        }
+
+        $this->db->delete('testimonials', ['id'=>$id]);
+    }
+
+    redirect('home/testimonial');
+}
 }

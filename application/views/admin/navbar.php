@@ -74,6 +74,11 @@
       <a class="sidebar-link" href="<?=base_url('home/home_faq')?>">Feq </a>
     </li>
 
+<li class="sidebar-item">
+   <a class="sidebar-link" href="<?=base_url('home/testimonial')?>">Testimonial</a>
+</li>
+
+
 
 
 
