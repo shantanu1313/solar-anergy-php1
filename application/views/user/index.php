@@ -342,35 +342,33 @@
     <div class="slider-container">
       <div class="slider" id="slider">
 
-        <div class="testimonial-card">
-          <div class="card-inner">
-            <img src="https://i.pravatar.cc/160?img=11">
-            <div class="stars">★★★★★</div>
-            <p>“Excellent solar installation service.”</p>
-            <h4>Rahul Patil</h4>
-            <div class="role">Home Owner</div>
-          </div>
-        </div>
+        <?php if(!empty($testimonials)): ?>
+            <?php foreach($testimonials as $row): ?>
 
-        <div class="testimonial-card">
-          <div class="card-inner">
-            <img src="https://i.pravatar.cc/160?img=12">
-            <div class="stars">★★★★★</div>
-            <p>“Smooth process and affordable pricing.”</p>
-            <h4>Sneha Kulkarni</h4>
-            <div class="role">Business Owner</div>
-          </div>
-        </div>
+                <div class="testimonial-card">
+                  <div class="card-inner">
 
-        <div class="testimonial-card">
-          <div class="card-inner">
-            <img src="https://i.pravatar.cc/160?img=13">
-            <div class="stars">★★★★★</div>
-            <p>“After-sales support is excellent.”</p>
-            <h4>Amit Deshmukh</h4>
-            <div class="role">Entrepreneur</div>
-          </div>
-        </div>
+                    <?php if(!empty($row->image)): ?>
+                        <img src="<?= base_url('uploads/testimonials/'.$row->image) ?>">
+                    <?php else: ?>
+                        <img src="<?= base_url('assets/image/default-user.png') ?>">
+                    <?php endif; ?>
+
+                    <div class="stars">
+                        <?php for($i=1; $i<=5; $i++): ?>
+                            <span style="color:<?= $i <= $row->rating ? '#ff7a00' : '#ccc' ?>;">★</span>
+                        <?php endfor; ?>
+                    </div>
+
+                    <p>“<?= $row->message ?>”</p>
+                    <h4><?= $row->name ?></h4>
+                    <div class="role"><?= $row->role ?></div>
+
+                  </div>
+                </div>
+
+            <?php endforeach; ?>
+        <?php endif; ?>
 
       </div>
     </div>
@@ -381,9 +379,8 @@
 
 </section>
 
-    <script src="<?= base_url('assets/js/index.js') ?>"></script>
+<script src="<?= base_url('assets/js/index.js') ?>"></script>
 
-		
 
 </body>
 </html>

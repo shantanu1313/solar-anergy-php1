@@ -661,7 +661,7 @@ body{
 
 /* Card */
 .testimonial-card{
-  min-width:350px;
+  min-width:300px;
   flex-shrink:0;
   padding-top:60px;
 }
@@ -687,7 +687,7 @@ body{
   height:120px;
   border-radius:50%;
   object-fit:cover;
-  border:6px solid #fbbf24;
+  border:3px solid #8295fd;
   position:absolute;
   top:-60px;
   left:50%;
@@ -815,4 +815,34 @@ body{
     font-size: 32px;
     margin-bottom: 35px;
   }
+
+  /* Fix Card Height */
+.testimonial-card{
+  min-width:300px;
+  max-width:300px;
+  flex-shrink:0;
+  padding-top:60px;
+}
+
+/* Fix Inner Height */
+.card-inner{
+  height:420px;   /* 🔥 fixed height */
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+}
+
+/* Fix Message Area */
+.card-inner p{
+  color:#334155;
+  font-style:italic;
+  margin-bottom:20px;
+
+  height:70px;                 /* 🔥 fixed message height */
+  overflow:hidden;
+  display:-webkit-box;
+  -webkit-line-clamp:3;        /* 🔥 max 3 lines */
+  -webkit-box-orient:vertical;
+}
+
 }

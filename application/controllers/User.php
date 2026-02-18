@@ -34,9 +34,16 @@ class User extends CI_Controller {
     $data['leading']   = $this->db->get('leading_section')->row();
     $data['faqs'] = $this->db->order_by('id','DESC')->get('faqs')->result();
 
+      // 🔥 TESTIMONIALS ADD KARA
+    $data['testimonials'] = $this->db
+                                  ->order_by('id','DESC')
+                                  ->get('testimonials')
+                                  ->result();
+                                  
         $this->load->view("user/index",$data);
         $this->load->view("user/footer");
     }
+
 
     /* ================= ABOUT ================= */
     public function about()
@@ -233,4 +240,7 @@ public function save_quote()
         echo "Something went wrong. Please try again.";
     }
 }
+
+
+
 }
